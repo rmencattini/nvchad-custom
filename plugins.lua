@@ -35,7 +35,7 @@ local plugins = {
     opts = {
       -- Automatically install missing parsers when entering buffer
       -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-      ensure_installed = { "javascript", "typescript", "html", "scss", "css" },
+      ensure_installed = { "javascript", "typescript", "html", "scss", "css", "java" }, -- To get vuejs tempalte working
       auto_install = true,
 
       highlight = {
@@ -75,6 +75,13 @@ local plugins = {
       char = '┊',
     }
   },
+  {
+    "mfussenegger/nvim-jdtls", -- Helper for java lsp
+    ft = { "java", "groovy" },
+    config = function()
+      require "custom.configs.jdtls"
+    end
+  }
 }
 
 return plugins

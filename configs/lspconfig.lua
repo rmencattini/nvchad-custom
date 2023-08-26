@@ -20,7 +20,6 @@ local local_on_attach = (function(client, bufnr)
   vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
   vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
   vim.keymap.set("n", "<leader>cf", function() vim.lsp.buf.format() end, { buffer = bufnr })
-  vim.keymap.set("n", "<leader>coi", function() require('jdtls').organize_imports() end, opts)
 end)
 
 lspconfig.rust_analyzer.setup({
